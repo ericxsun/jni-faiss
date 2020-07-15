@@ -3,7 +3,24 @@
 
 ## cpu
 
-- git clone https://github.com/gameofdimension/jni-faiss.git && cd jni-faiss && git submodule update --init
+- git clone https://github.com/gameofdimension/jni-faiss.git && cd jni-faiss && git submodule update --init --progress
+
+- build faiss
+
+```sh
+cd faiss
+./configure --prefix=/usr/local --libdir=/usr/local/lib --without-cuda
+make
+# make install
+```
+
+- build java
+
+```
+cd jni
+make
+
+```
 
 - docker build -t jni-faiss .
 
